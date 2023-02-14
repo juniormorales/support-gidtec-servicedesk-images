@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+  application:
+    name: support-gidtec-servicedesk-images
+  data:
+    mongodb:
+      uri: mongodb+srv://juniormoralesbrenis:sj7EX9iTxHWKiXob@cluster0.arspgug.mongodb.net/gidtec-servicedesk-db?retryWrites=true&w=majority
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
+      enabled: true
+
+application:
+  openapi:
+    info:
+      title: Service Desk Images
+      description: Permite la subida y descarga de imagenes para los distintos recursos (tickets, mensajes, perfil, etc)
+      version: 1.0.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
+server:
+  port: 8082
